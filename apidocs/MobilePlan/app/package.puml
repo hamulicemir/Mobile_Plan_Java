@@ -1,0 +1,15 @@
+@startuml
+    namespace MobilePlan.app {
+
+        class Main [[Main.html]] {
+            {static} +main(String[]): void
+            {static} +export(List<MobilePhoneContract>, String): int
+            {static} +filter(List<T>, Matcher<? super T>): List<T>
+            {static} +print(List<MobilePhoneContract>): void
+            {static} +init(): List<MobilePhoneContract>
+        }
+
+    }
+
+    center footer UMLDoclet 2.0.12, PlantUML 1.2020.16
+@enduml

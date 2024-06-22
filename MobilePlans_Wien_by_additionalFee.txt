@@ -1,0 +1,10 @@
+MobilePhoneContract [
+carrier=A1, customer=[Markus 32 [Stephansplatz 1; 1010 Wien, Wien]], imei=351756051523999, usedUnits=0,
+connections=[]
+]
+MobilePhoneContract [
+carrier=3AT, customer=[Martina 18 [Lange Gasse; 2700 Wiener Neustadt, Niederoesterreich]], imei=987289743254583, usedUnits=0,
+connections=[]
+]
+PrePaidCard{preloadedAmount=10.0}
+PrePaidCard{preloadedAmount=30.0}

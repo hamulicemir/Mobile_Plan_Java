@@ -1,0 +1,13 @@
+@startuml
+    set namespaceSeparator none
+    hide empty fields
+    hide empty methods
+
+    enum "<size:14>ConnectionType\n<size:10>MobilePlan.provided" as MobilePlan.provided.ConnectionType [[ConnectionType.html]] {
+        {static} +STANDARD
+        {static} +PREMIUM
+        {static} +TEXT
+    }
+
+    center footer UMLDoclet 2.0.12, PlantUML 1.2020.16
+@enduml

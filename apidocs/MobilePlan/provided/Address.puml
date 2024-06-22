@@ -1,0 +1,24 @@
+@startuml
+    set namespaceSeparator none
+    hide empty fields
+    hide empty methods
+
+    class "<size:14>Address\n<size:10>MobilePlan.provided" as MobilePlan.provided.Address [[Address.html]] {
+        -line_1: String
+        -zip: int
+        -city: String
+        -state: String
+        +Address(String, int, String, String)
+        +Address(Address)
+        +getLine_1(): String
+        +setLine_1(String): void
+        +getZip(): int
+        +setZip(int): void
+        +getCity(): String
+        +setCity(String): void
+        +getState(): String
+        +setState(String): void
+    }
+
+    center footer UMLDoclet 2.0.12, PlantUML 1.2020.16
+@enduml

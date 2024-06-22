@@ -1,0 +1,22 @@
+@startuml
+    set namespaceSeparator none
+    hide empty fields
+    hide empty methods
+
+    class "<size:14>MonthlyContract\n<size:10>MobilePlan.entities" as MobilePlan.entities.MonthlyContract [[MonthlyContract.html]] {
+        -includedUnits: int
+        +MonthlyContract(Customer, String, String, int)
+        +setIncludedUnits(int): void
+        +unitsLeft(): int
+        +additionalFee(): float
+    }
+
+    abstract class "<size:14>MobilePhoneContract\n<size:10>MobilePlan.entities" as MobilePlan.entities.MobilePhoneContract [[MobilePhoneContract.html]] {
+        {abstract} +unitsLeft(): int
+        {abstract} +additionalFee(): float
+    }
+
+    MobilePlan.entities.MobilePhoneContract <|-- MobilePlan.entities.MonthlyContract
+
+    center footer UMLDoclet 2.0.12, PlantUML 1.2020.16
+@enduml

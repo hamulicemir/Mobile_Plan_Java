@@ -1,0 +1,30 @@
+@startuml
+    set namespaceSeparator none
+    hide empty fields
+    hide empty methods
+
+    abstract class "<size:14>MobilePhoneContract\n<size:10>MobilePlan.entities" as MobilePlan.entities.MobilePhoneContract [[MobilePhoneContract.html]] {
+        -customer: Customer
+        -imei: String
+        -carrier: String
+        -connections: List<Connection>
+        +MobilePhoneContract(Customer, String, String)
+        +outgoingConnections(): List<Connection>
+        {abstract} +unitsLeft(): int
+        {abstract} +additionalFee(): float
+        +setImei(String): MobilePhoneContract
+        +getUsedUnits(): int
+        +compareTo(MobilePhoneContract): int
+        +getCustomer(): Customer
+        +getImei(): String
+        +addConnection(Connection): boolean
+    }
+
+    interface "<size:14>Comparable\n<size:10>java.lang" as java.lang.Comparable<MobilePhoneContract> {
+        {abstract} +compareTo(MobilePhoneContract): int
+    }
+
+    java.lang.Comparable <|.. MobilePlan.entities.MobilePhoneContract
+
+    center footer UMLDoclet 2.0.12, PlantUML 1.2020.16
+@enduml

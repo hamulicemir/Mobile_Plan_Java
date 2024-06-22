@@ -1,0 +1,60 @@
+@startuml
+    namespace MobilePlan.entities {
+
+        abstract class MobilePhoneContract [[MobilePhoneContract.html]] {
+            -customer: Customer
+            -imei: String
+            -carrier: String
+            +MobilePhoneContract(Customer, String, String)
+            +outgoingConnections(): List<Connection>
+            {abstract} +unitsLeft(): int
+            {abstract} +additionalFee(): float
+            +setImei(String): MobilePhoneContract
+            +getUsedUnits(): int
+            +compareTo(MobilePhoneContract): int
+            +getCustomer(): Customer
+            +getImei(): String
+            +addConnection(Connection): boolean
+        }
+
+        class Connection [[Connection.html]] {
+            -type: ConnectionType
+            -units: int
+            -dateTime: DateTime
+            +Connection(MobilePhoneContract, MobilePhoneContract, ConnectionType, DateTime, int)
+            +getUnits(): int
+        }
+
+        class PrePaidCard [[PrePaidCard.html]] {
+            -preloadedAmount: float
+            +PrePaidCard(Customer, String, String, float)
+            +PrePaidCard(Customer, String, String)
+            -setPreloadedAmount(float): void
+            +unitsLeft(): int
+            +additionalFee(): float
+            +topUp(float): void
+        }
+
+        class MonthlyContract [[MonthlyContract.html]] {
+            -includedUnits: int
+            +MonthlyContract(Customer, String, String, int)
+            +setIncludedUnits(int): void
+            +unitsLeft(): int
+            +additionalFee(): float
+        }
+
+        java.lang.Comparable <|.. MobilePhoneContract
+        MobilePhoneContract --> "*" Connection: connections
+        Connection --> MobilePhoneContract: caller\ncallee
+        MobilePhoneContract <|-- PrePaidCard
+        MobilePhoneContract <|-- MonthlyContract
+    }
+
+    namespace java.lang {
+        interface Comparable<T> {
+            {abstract} +compareTo(T): int
+        }
+    }
+
+    center footer UMLDoclet 2.0.12, PlantUML 1.2020.16
+@enduml

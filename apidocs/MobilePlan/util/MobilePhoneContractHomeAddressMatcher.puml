@@ -1,0 +1,19 @@
+@startuml
+    set namespaceSeparator none
+    hide empty fields
+    hide empty methods
+
+    class "<size:14>MobilePhoneContractHomeAddressMatcher\n<size:10>MobilePlan.util" as MobilePlan.util.MobilePhoneContractHomeAddressMatcher [[MobilePhoneContractHomeAddressMatcher.html]] {
+        -pattern: String
+        +MobilePhoneContractHomeAddressMatcher(String)
+        +matches(MobilePhoneContract): boolean
+    }
+
+    interface "<size:14>Matcher\n<size:10>MobilePlan.provided" as MobilePlan.provided.Matcher<MobilePhoneContract> [[../provided/Matcher.html]] {
+        {abstract} +matches(MobilePhoneContract): boolean
+    }
+
+    MobilePlan.provided.Matcher <|.. MobilePlan.util.MobilePhoneContractHomeAddressMatcher
+
+    center footer UMLDoclet 2.0.12, PlantUML 1.2020.16
+@enduml

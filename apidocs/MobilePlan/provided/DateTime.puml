@@ -1,0 +1,25 @@
+@startuml
+    set namespaceSeparator none
+    hide empty fields
+    hide empty methods
+
+    class "<size:14>DateTime\n<size:10>MobilePlan.provided" as MobilePlan.provided.DateTime [[DateTime.html]] {
+        -year: int
+        -month: int
+        -day: int
+        -hour: int
+        -min: int
+        +DateTime(DateTime)
+        +DateTime(int, int, int, int, int)
+        +compareTo(DateTime): int
+        +timestamp(): long
+    }
+
+    interface "<size:14>Comparable\n<size:10>java.lang" as java.lang.Comparable<DateTime> {
+        {abstract} +compareTo(DateTime): int
+    }
+
+    java.lang.Comparable <|.. MobilePlan.provided.DateTime
+
+    center footer UMLDoclet 2.0.12, PlantUML 1.2020.16
+@enduml

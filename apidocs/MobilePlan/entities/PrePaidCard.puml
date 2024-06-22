@@ -1,0 +1,24 @@
+@startuml
+    set namespaceSeparator none
+    hide empty fields
+    hide empty methods
+
+    class "<size:14>PrePaidCard\n<size:10>MobilePlan.entities" as MobilePlan.entities.PrePaidCard [[PrePaidCard.html]] {
+        -preloadedAmount: float
+        +PrePaidCard(Customer, String, String, float)
+        +PrePaidCard(Customer, String, String)
+        -setPreloadedAmount(float): void
+        +unitsLeft(): int
+        +additionalFee(): float
+        +topUp(float): void
+    }
+
+    abstract class "<size:14>MobilePhoneContract\n<size:10>MobilePlan.entities" as MobilePlan.entities.MobilePhoneContract [[MobilePhoneContract.html]] {
+        {abstract} +unitsLeft(): int
+        {abstract} +additionalFee(): float
+    }
+
+    MobilePlan.entities.MobilePhoneContract <|-- MobilePlan.entities.PrePaidCard
+
+    center footer UMLDoclet 2.0.12, PlantUML 1.2020.16
+@enduml

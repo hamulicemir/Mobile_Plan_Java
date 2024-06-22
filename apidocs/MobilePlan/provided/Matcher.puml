@@ -1,0 +1,11 @@
+@startuml
+    set namespaceSeparator none
+    hide empty fields
+    hide empty methods
+
+    interface "<size:14>Matcher\n<size:10>MobilePlan.provided" as MobilePlan.provided.Matcher<T> [[Matcher.html]] {
+        {abstract} +matches(T): boolean
+    }
+
+    center footer UMLDoclet 2.0.12, PlantUML 1.2020.16
+@enduml

@@ -1,0 +1,18 @@
+@startuml
+    set namespaceSeparator none
+    hide empty fields
+    hide empty methods
+
+    class "<size:14>Connection\n<size:10>MobilePlan.entities" as MobilePlan.entities.Connection [[Connection.html]] {
+        -caller: MobilePhoneContract
+        -callee: MobilePhoneContract
+        -type: ConnectionType
+        -units: int
+        -dateTime: DateTime
+        +Connection(MobilePhoneContract, MobilePhoneContract, ConnectionType, DateTime, int)
+        +getUnits(): int
+        +getCaller(): MobilePhoneContract
+    }
+
+    center footer UMLDoclet 2.0.12, PlantUML 1.2020.16
+@enduml

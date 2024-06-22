@@ -1,0 +1,23 @@
+@startuml
+    set namespaceSeparator none
+    hide circle
+    hide empty fields
+    hide empty methods
+
+    MobilePlan.app --> MobilePlan.provided
+    MobilePlan.entities --> MobilePlan.provided
+    MobilePlan.util --> MobilePlan.provided
+    MobilePlan.util --> MobilePlan.entities
+
+    ' Package links
+    class "MobilePlan.app" [[MobilePlan/app/package-summary.html]] {
+    }
+    class "MobilePlan.provided" [[MobilePlan/provided/package-summary.html]] {
+    }
+    class "MobilePlan.entities" [[MobilePlan/entities/package-summary.html]] {
+    }
+    class "MobilePlan.util" [[MobilePlan/util/package-summary.html]] {
+    }
+
+    center footer UMLDoclet 2.0.12, PlantUML 1.2020.16
+@enduml

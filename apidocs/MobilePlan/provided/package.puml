@@ -1,0 +1,65 @@
+@startuml
+    namespace MobilePlan.provided {
+
+        class Address [[Address.html]] {
+            -line_1: String
+            -zip: int
+            -city: String
+            -state: String
+            +Address(String, int, String, String)
+            +Address(Address)
+            +getLine_1(): String
+            +setLine_1(String): void
+            +getZip(): int
+            +setZip(int): void
+            +getCity(): String
+            +setCity(String): void
+            +getState(): String
+            +setState(String): void
+        }
+
+        class DateTime [[DateTime.html]] {
+            -year: int
+            -month: int
+            -day: int
+            -hour: int
+            -min: int
+            +DateTime(DateTime)
+            +DateTime(int, int, int, int, int)
+            +compareTo(DateTime): int
+            +timestamp(): long
+        }
+
+        class Customer [[Customer.html]] {
+            -name: String
+            -age: int
+            +Customer(String, int, Address)
+            +Customer(Customer)
+            +getName(): String
+            +setName(String): void
+            +getAge(): int
+            +setAge(int): void
+        }
+
+        enum ConnectionType [[ConnectionType.html]] {
+            {static} +STANDARD
+            {static} +PREMIUM
+            {static} +TEXT
+        }
+
+        interface Matcher<T> [[Matcher.html]] {
+            {abstract} +matches(T): boolean
+        }
+
+        java.lang.Comparable <|.. DateTime
+        Customer --> Address: home
+    }
+
+    namespace java.lang {
+        interface Comparable<T> {
+            {abstract} +compareTo(T): int
+        }
+    }
+
+    center footer UMLDoclet 2.0.12, PlantUML 1.2020.16
+@enduml

@@ -1,0 +1,21 @@
+@startuml
+    set namespaceSeparator none
+    hide empty fields
+    hide empty methods
+
+    class "<size:14>Customer\n<size:10>MobilePlan.provided" as MobilePlan.provided.Customer [[Customer.html]] {
+        -name: String
+        -age: int
+        -home: Address
+        +Customer(String, int, Address)
+        +Customer(Customer)
+        +getName(): String
+        +setName(String): void
+        +getAge(): int
+        +setAge(int): void
+        +getHome(): Address
+        +setHome(Address): void
+    }
+
+    center footer UMLDoclet 2.0.12, PlantUML 1.2020.16
+@enduml
